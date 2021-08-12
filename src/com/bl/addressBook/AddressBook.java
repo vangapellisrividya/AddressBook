@@ -74,39 +74,93 @@ public class AddressBook {
 
 	}
 
+	public String getPhoneNumber() {
+		return getPhoneNumber();
+	}
 
-		public String getPhoneNumber() {
-			return getPhoneNumber();
-		}
+	public void setPhoneNumber(String PhoneNumber) {
+		this.phonenumber = PhoneNumber;
+	}
 
-		public void setPhoneNumber(String PhoneNumber) {
-			this.phonenumber = PhoneNumber;
-		}
+	public String getStreet() {
+		return getStreet();
+	}
 
-		public String getStreet() {
-			return getStreet();
-		}
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-		public void setStreet(String street) {
-			this.street = street;
-		}
+	public String getCity() {
+		return getCity();
+	}
 
-		public String getCity() {
-			return getCity();
-		}
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-		public void setCity(String city) {
-			this.city = city;
-		}
+	public String getState() {
+		return getState();
+	}
 
-		public String getState() {
-			return getState();
-		}
+	public void setState(String state) {
+		this.state = state;
+	}
 
-		public void setState(String state) {
-			this.state = state;
+	
+
+	public void edit() {
+		System.out.println(" Enter the Firstname");
+		String Firstname = SC.next();
+		for (int i = 0; i < addressBookList.size(); i++) {
+			System.out.println(addressBookList);
+			String name = addressBookList.get(i).getFirstname();
+			if (name.equals(Firstname)) {
+				System.out.println(" chooose any option ");
+				int option;
+				option = SC.nextInt();
+				switch (option) {
+				case 1:
+					System.out.println(" Enter firstName ");
+					addressBookList.get(i).setFirstname(SC.next());
+
+					break;
+				case 2:
+					System.out.println(" Enter lastName ");
+					addressBookList.get(i).setLastname(SC.next());
+					break;
+				case 3:
+					System.out.println(" Enter TempAddress  ");
+					addressBookList.get(i).setTempAddress(SC.next());
+					break;
+				case 4:
+					System.out.println(" Enter email ");
+					addressBookList.get(i).setEmail(SC.next());
+					break;
+				case 5:
+					System.out.println(" Enter phoneNumber ");
+					addressBookList.get(i).setPhoneNumber(SC.next());
+					break;
+				case 6:
+					System.out.println(" Enter city ");
+					addressBookList.get(i).setCity(SC.next());
+					break;
+				case 7:
+					System.out.println(" Enter state ");
+					addressBookList.get(i).setState(SC.next());
+					break;
+				case 8:
+					System.out.println(" Enter zip ");
+					addressBookList.get(i).setZip(SC.next());
+					break;
+				case 9:
+					System.exit(0);
+
+				}
+			} else {
+				System.out.println(" name is incorrect\nEnter the correct name");
+
+			}
 		}
 
 	}
-
-
+}
